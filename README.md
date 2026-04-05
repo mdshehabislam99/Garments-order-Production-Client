@@ -126,6 +126,6 @@ If you want open-source usage, add an MIT `LICENSE` file and update this section
 ---
 
 ## Contact
-**Live URL:** https://garments-production-tracker.web.app  
+**Live URL:**[Live Link](https://garments-production-tracker.web.app)  
 **Email:** shihabkhanahab@gmail.com  
-**Portfolio:** https://shehabislam99.netlify.app/
+**Portfolio:**[Portfolio Link](https://personal-portfolio-website-weld-five.vercel.app/)
