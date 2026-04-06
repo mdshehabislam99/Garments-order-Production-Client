@@ -35,7 +35,6 @@ import OrderDetails from "../Pages/MainDashboard/Manager/OrderDetails";
 import AdminManagerRout from "./AdminManagerRout";
 import OrderTracking from "../Pages/MainDashboard/Admin/OrderTracking";
 import TermCondition from "../Pages/Additional Page/TermCondition";
-
 import Settings from "../Pages/MainDashboard/Shared/Settings";
 import PrivacyPolicy from "../Pages/Additional Page/PrivacyPolicy";
 
