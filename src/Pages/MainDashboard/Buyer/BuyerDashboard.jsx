@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FaTasks, FaMapMarkerAlt, FaUser } from "react-icons/fa";
 import useAuth from "../../../Hooks/useAuth";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import useAxios from "../../../Hooks/useAxios";
 
 const DashboardOverview = ({ stats }) => (
   <div className="p-6">
@@ -83,7 +84,7 @@ const DashboardOverview = ({ stats }) => (
 
 const BuyerDashboard = () => {
   const { user } = useAuth();
-  const axiosSecure = useAxiosSecure();
+  const axioInstance= useAxios()
   const [stats, setStats] = useState({
     totalOrders: 0,
     pendingPayment: 0,
@@ -91,11 +92,11 @@ const BuyerDashboard = () => {
   });
 
   useEffect(() => {
-    if (!user) return;
+    if () return;
 
     const fetchDashboardStats = async () => {
       try {
-        const response = await axiosSecure.get("/buyer/stats");
+        const response = await axioInstance.get("/buyer/stats");
         setStats(response.data.data);
       } catch (error) {
         console.error("Error fetching dashboard stats:", error);
@@ -103,7 +104,7 @@ const BuyerDashboard = () => {
     };
 
     fetchDashboardStats();
-  }, [axiosSecure, user]);
+  }, [axioInstance]);
 
   return (
     <div className="flex h-screen">
