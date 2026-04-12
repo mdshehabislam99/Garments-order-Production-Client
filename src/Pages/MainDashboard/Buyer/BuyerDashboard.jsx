@@ -91,6 +91,8 @@ const BuyerDashboard = () => {
   });
 
   useEffect(() => {
+    if (!user) return;
+
     const fetchDashboardStats = async () => {
       try {
         const response = await axiosSecure.get("/buyer/stats");
@@ -99,8 +101,9 @@ const BuyerDashboard = () => {
         console.error("Error fetching dashboard stats:", error);
       }
     };
+
     fetchDashboardStats();
-  }, []);
+  }, [axiosSecure, user]);
 
   return (
     <div className="flex h-screen">
