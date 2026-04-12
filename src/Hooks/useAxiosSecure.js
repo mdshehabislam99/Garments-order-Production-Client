@@ -12,13 +12,17 @@ const useAxiosSecure = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const reqInterceptor = axiosSecure.interceptors.request.use((config) => {
-      if (user?.accessToken) {
-      config.headers.authorization = `Bearer ${user.accessToken}`;
-
-      }
-      return config;
-    });
+    const reqInterceptor = axiosSecure.interceptors.request.use(
+      async (config) => {
+        if (user) {
+          const token = await user.getIdToken();
+          config.headers = config.headers ?? {};
+          config.headers.authorization = `Bearer ${token}`;
+        }
+        return config;
+      },
+      (error) => Promise.reject(error)
+    );
 
     const resInterceptor = axiosSecure.interceptors.response.use(
       (res) => res,
