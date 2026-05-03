@@ -6,7 +6,6 @@ Role-based garment order management platform for buyers, managers, and admins wi
 ## About the Project
 Garments Order Production Client is a frontend application for managing garment production workflows. It supports product browsing, order placement, approval pipelines, order tracking, and role-based dashboard operations for buyer, manager, and admin users.
 
----
 
 ## Project Overview
 - Built to digitize garment order and production flow in a single dashboard ecosystem.
